@@ -22,16 +22,17 @@
           </div>
         <% end %>
       </div>
-      <div class="col-4 slogan">
+      <div class="col col-sm-4 hidden-xs-down slogan">
         It's funny because it's true.
       </div>
-      <div class="col-5 links">
+      <div class="col-10 offset-1 offset-sm-0 col-sm-5 links">
         <!-- Button trigger modal -->
         <%= link_to 'Contribute', '#', data: {toggle: 'modal', target: '#myModal'} %>
         <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
           Launch demo modal
         </button> -->
         <!-- <%= link_to 'Contribute', new_quote_path %> -->
+        &nbsp;&nbsp;
         <%= link_to 'About', about_path %>
       </div>
     </header>
@@ -48,13 +49,14 @@
           </div>
           <%= simple_form_for Quote.new do |f| %>
             <div class="modal-body">
-              <%= f.input :saying %>
-              <%= f.input :author %>
+              <%= f.input :saying, label: "Give me a quote that's both funny and true-to-life...", placeholder: "Men don't care what's on TV. They only care what else is on TV." %>
+              <br />
+              <%= f.input :author, label: "...and the clown who said it.", placeholder: "Jerry Seinfeld" %>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <%= f.submit 'Create', class: 'btn btn-danger' %>
-            </div>
+            </div>s
           <% end %>
         </div>
       </div>
@@ -76,11 +78,11 @@
     <div class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-6">
+          <div class="col-12 col-sm-6">
             <%= link_to "This isn't enough, I need more", root_path, class: 'next-quote' %>
           </div>
-          <div class="col-6 footer-blurb">
-            Assembled with love by <a href="http://nnadkarny.getforge.io/">Nikhil</a> in Delaware which is totally a real state.<br />
+          <div class="col-12 col-sm-6 footer-blurb">
+            Assembled with love by <a href="http://nnadkarny.getforge.io/">Nikhil</a> in Delaware, which is totally a real state.<br />
             Want to build your own Splurty Web App? <a href="http://thefirehoseproject.com">Learn how to code here</a>. #noplugshame
           </div>
         </div>
